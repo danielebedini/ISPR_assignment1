@@ -77,4 +77,3 @@ def plot_mfcc(path):
     plt.colorbar()
     plt.title('MFCC')
     plt.show()
-
