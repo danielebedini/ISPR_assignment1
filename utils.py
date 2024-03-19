@@ -18,11 +18,12 @@ def plot_spectrogram(path):
     y, sr = librosa.load(path, sr=None)
     
     # Compute the spectrogram magnitude and phase
-    S_full, phase = librosa.magphase(librosa.stft(y))
+    #S_full, phase = librosa.magphase(librosa.stft(y))
+    D = librosa.stft(y) # Short-Time Fourier Transform (STFT)
 
     # Plot the magnitude spectrogram
-    plt.figure(figsize=(8, 3))
-    librosa.display.specshow(librosa.amplitude_to_db(S_full, ref=np.max), y_axis='log', x_axis='time', sr=sr)
+    plt.figure(figsize=(8, 6))
+    librosa.display.specshow(librosa.amplitude_to_db(np.abs(D)), y_axis='log', x_axis='time', sr=sr)
     plt.colorbar(format='%+2.0f dB')
     plt.title('Spectrogram')
 
@@ -44,7 +45,7 @@ def plot_magnitude_and_phase_spectrogram(path):
     
     y, sr = librosa.load(path, sr=None)
     S_full, phase = librosa.magphase(librosa.stft(y))
-    plt.figure(figsize=(8, 3))
+    plt.figure(figsize=(12, 4))
     plt.subplot(1, 2, 1)
     librosa.display.specshow(librosa.amplitude_to_db(S_full, ref=np.max), y_axis='log', x_axis='time', sr=sr)
     plt.colorbar(format='%+2.0f dB')
