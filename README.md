@@ -11,7 +11,7 @@ In your presentation, discuss which samples you chose to compare, how you comput
 
 In Python you can import WAVs (and acces several other music-related functions), using the LibROSA library.
 
-##How to run: 
+### How to run: 
 
 Activate python environment
 ```
