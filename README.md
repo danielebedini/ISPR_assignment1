@@ -13,6 +13,10 @@ In Python you can import WAVs (and acces several other music-related functions),
 
 ### How to run
 
+Requirements
+```
+pip install -r requirements.txt
+```
 Activate python environment
 ```
 conda activate [YOUR_ENV]
